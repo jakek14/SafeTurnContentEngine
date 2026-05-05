@@ -159,6 +159,18 @@ These are the rules the v1 LinkedIn engine evolved through real edits. They appl
 10. Commit and push both files in a single commit
 11. Create both posts in Vista Social, targeting the "Safeturn Advisory (Brand)" profile group, assigned to the "Safeturn Content Engine" approval workflow → posts land as Pending Review
 
+## What `posts/` Is For (Read Carefully)
+
+The `posts/` folder contains 6 pillar reference files. **They are style and tone references only — NOT content to copy, remix, or use as templates.**
+
+- DO read them once at the start of a run if you need to recalibrate voice or pillar feel
+- DO NOT copy phrases, hooks, structures, or arguments from them into today's post
+- DO NOT treat them as a topic backlog
+- Every post you generate must come from **today's web research + the rules in this file**, not from anything in `posts/`
+- If a draft you're writing starts to echo a `posts/` file, rewrite it from scratch with current research
+
+Posts go stale fast. The whole engine exists to produce fresh takes on **what's happening this week** in SMB debt and cash flow — not to recycle a template library.
+
 ## Output Format Per File
 
 Each post file contains **only the final post text** (Meta files also include a one-line HTML-comment visual direction at the very top — see `meta/CLAUDE.md`).
