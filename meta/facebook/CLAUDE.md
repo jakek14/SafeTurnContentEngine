@@ -58,7 +58,7 @@ The image prompt embeds the headline and subtitle text directly in the generated
 
 **Aspect ratio for Facebook:** 4:5 portrait (1080×1350) preferred — 33% more mobile screen real estate. 1:1 (1080×1080) acceptable second choice. Never 1.91:1 horizontal for organic.
 
-See `../image-style.md` Template A (Pull-Quote Card) for default prompt structure. ~90% of FB posts use Template A; Template B (Architectural Texture) only when the core idea is genuinely structural.
+**Use Template A (Light Editorial Pull-Quote) — Facebook's default** — see `../image-style.md`. Light/restrained: white background, dark-blue headline, green edge sliver. Differentiates Facebook from Instagram, which uses the dark Template C. Template B (Architectural Texture) is the only acceptable substitute, and only when the post's core idea is genuinely structural.
 
 The "20% text rule" is dead. Meta's current "Image Text Rating" (OK/Low/Med/High) throttles distribution as text density rises — keep the overlay to one short pull-quote, not a paragraph.
 

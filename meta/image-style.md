@@ -13,17 +13,16 @@ Shared brand visual identity for Facebook and Instagram. Each daily Meta post mu
 - **Distinctive motif:** A small geometric badge/seal mark recurs throughout the brand — included as a quiet anchor in the bottom corner of every image (outline only, no internal text).
 - **Tagline / brand voice cue:** "Replace panic with a plan." — every visual feels grounded and methodical, never urgent or alarming.
 
-## Default Image Format: Pull-Quote Card (Text Embedded)
+## Per-Channel Template Defaults (REQUIRED)
 
-Every Meta post uses this format. The image generator produces a finished, post-ready asset with the headline and subtitle rendered directly in the image. No post-production.
+Facebook and Instagram must look visibly different at a glance — same brand, different aesthetic register. Use the channel's default template every day:
 
-**Structure:**
-- Pristine white background with subtle paper-texture grain
-- A single thin vertical sliver of brand green running down one edge
-- **Headline text rendered in the upper-middle center** — bold sans-serif, dark blue, exact wording specified in the prompt
-- **Subtitle text rendered below the headline** — lighter weight sans-serif, brand green, the URL `SafeTurnAdvisory.com`
-- Bottom corner: small geometric badge mark (dark blue outline, no internal text)
-- No people, no stock photography, no decorative icons
+- **Facebook → Template A (Light Editorial Pull-Quote)** — white background, dark-blue headline, restrained. Caption does most of the work; image is quiet authority. Matches FB's older, more analytical reader.
+- **Instagram → Template C (Dark Bold Poster)** — dark-blue background, white headline, bolder/more graphic. Image carries the post; caption supplements. Matches IG's image-first feed and faster scroll.
+
+Same color palette in both, opposite color emphasis. A user following both feeds sees the brand's range, not duplicate posts.
+
+Template B (Architectural Texture) is a structural-themed variant used sparingly on either channel — see below.
 
 ## Image-Prompt Best Practices for Embedded Text
 
@@ -66,9 +65,9 @@ Just two sections. No "Text Overlay" / no "Add manually after generation" step. 
 
 ## Prompt Templates
 
-### Template A — Pull-Quote Card (default)
+### Template A — Light Editorial Pull-Quote (Facebook default)
 
-Use for ~90% of posts.
+The quiet, restrained version. White background, dark-blue headline. Use for ~90% of Facebook posts.
 
 ```
 A minimalist [4:5 portrait | 1:1 square] pull-quote graphic for a financial advisory brand.
@@ -95,7 +94,37 @@ Calm, professional, financial-advisory aesthetic. High-end editorial feel, like 
 
 Substitute every bracketed `[option]` per channel and per post (alternate edge sides for visual variety across the calendar).
 
-### Template B — Architectural Texture (use sparingly, ~10% of posts)
+### Template C — Dark Bold Poster (Instagram default)
+
+The bold, graphic version. Dark blue background, white headline, green accent band. Use for ~90% of Instagram posts. This is the visual differentiator from Facebook.
+
+```
+A bold, minimalist [4:5 portrait | 1:1 square] poster graphic for a financial advisory brand.
+
+Background: solid dark blue #242E40, full bleed, with a very subtle paper-grain texture, faintly visible at close inspection. The dark blue is rich and slightly warm, not flat.
+
+A horizontal band of brand green #23A85B running across the bottom of the frame, approximately 6% of the frame height. Crisp edge, solid color.
+
+Centered horizontally, vertically positioned in the upper-middle third of the frame, render this headline text exactly as written, with correct spelling and punctuation: "[EXACT HEADLINE TEXT — pulled from the caption, 6–12 words]"
+The headline is in modern sans-serif typography, similar to Inter Bold or Söhne Bold, in pure white #FFFFFF, large and confident — noticeably bolder presence than an editorial layout. Comfortable line spacing, generous tracking.
+
+On a single line directly below the headline, smaller and lighter, render this subtitle text exactly: "SafeTurnAdvisory.com"
+The subtitle is in modern sans-serif regular weight, in brand green #23A85B.
+
+Top-right corner: a small geometric badge/seal mark in white #FFFFFF outline only, simple and modern, approximately 6% of the frame width. No text inside the badge.
+
+NO other text anywhere in the image except the headline and the SafeTurnAdvisory.com subtitle specified above.
+NO people, faces, hands, silhouettes, decorative icons, clip-art, graphs, or infographic elements.
+NO white edge sliver or border — the dark background is full bleed except for the green bottom band.
+
+Confident, graphic, magazine-poster aesthetic. Scroll-stopping presence on a busy Instagram feed.
+
+[4:5 portrait, 1080×1350 pixels | 1:1 square, 1080×1080 pixels].
+```
+
+Substitute every bracketed `[option]` per post.
+
+### Template B — Architectural Texture (use sparingly, ~10% of posts on either channel)
 
 Use only when the post's core idea is genuinely structural (foundations, stability under pressure, etc.).
 
