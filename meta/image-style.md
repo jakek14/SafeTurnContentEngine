@@ -1,56 +1,125 @@
 # Safe Turn — Image Style Guide
 
-Shared brand visual identity for Facebook and Instagram. Each daily Meta post must include an image prompt the human can paste into **ChatGPT Image 2** (recommended for accurate text rendering) or **Nano Banana** to generate the **finished asset, fully ready to post — no Canva/Figma editing required.**
+Shared brand identity and creative direction for Facebook and Instagram images. **Every post gets its own custom image design — no templates, no fill-in-the-blank layouts.** The engine reads the caption, identifies a visual hook unique to that post, and writes a paste-ready prompt for **ChatGPT Image 2** (recommended) or **Nano Banana** that produces a finished, post-ready asset with text embedded directly in the image.
 
-## Brand Visual Identity (sourced from safeturnadvisory.com)
+## North Star
 
-- **Primary palette:**
-  - White background `#FFFFFF` (clean, pure white)
-  - Dark blue `#242E40` (headline text, structural elements, badge outlines)
-  - Brand green `#23A85B` (subtitle text, single edge sliver — the only color note, used sparingly)
-- **Typography zone:** Sans-serif geometric/humanist family. Specify "modern sans-serif similar to Inter, Söhne, or Neue Haas Grotesk" in the prompt.
-- **Aesthetic:** Minimalist corporate financial advisory. Calm, reassuring authority. Buttoned-up but not cold.
-- **Distinctive motif:** A small geometric badge/seal mark recurs throughout the brand — included as a quiet anchor in the bottom corner of every image (outline only, no internal text).
-- **Tagline / brand voice cue:** "Replace panic with a plan." — every visual feels grounded and methodical, never urgent or alarming.
+The Meta feed should look like a real graphic designer makes one custom card per day, not like a content engine cranking out the same template with different words.
 
-## Per-Channel Template Defaults (REQUIRED)
+If two consecutive posts on the same channel look like the same design with different headlines, the engine has failed its job. Each post needs a different *composition, visual centerpiece, color emphasis,* and *mood* than the last several posts on its channel.
 
-Facebook and Instagram must look visibly different at a glance — same brand, different aesthetic register. Use the channel's default template every day:
+---
 
-- **Facebook → Template A (Light Editorial Pull-Quote)** — white background, dark-blue headline, restrained. Caption does most of the work; image is quiet authority. Matches FB's older, more analytical reader.
-- **Instagram → Template C (Dark Bold Poster)** — dark-blue background, white headline, bolder/more graphic. Image carries the post; caption supplements. Matches IG's image-first feed and faster scroll.
+## Brand Identity (immutable)
 
-Same color palette in both, opposite color emphasis. A user following both feeds sees the brand's range, not duplicate posts.
+- **Palette:**
+  - White `#FFFFFF`
+  - Dark blue `#242E40`
+  - Brand green `#23A85B`
+  - That's it. No other colors. The variety comes from how the three are arranged, not from new hues.
+- **Typography:** Modern sans-serif. Inter, Söhne, Neue Haas Grotesk, or close visual equivalents. Specify in every prompt.
+- **Tone:** Calm, reassuring authority. Buttoned-up but not cold. The brand cue is "Replace panic with a plan" — never urgent, never alarming.
+- **Recurring motif:** A small geometric badge/seal mark in dark blue or white outline, placed as a quiet anchor somewhere in the composition. Position varies — corner, edge, inside a color block, or omitted entirely some posts.
 
-Template B (Architectural Texture) is a structural-themed variant used sparingly on either channel — see below.
+---
+
+## Hard Rules (apply to every image)
+
+- **No human faces, hands, bodies, silhouettes.** AI-rendered humans never match a real-photography brand.
+- **No clip-art / corporate stock tropes.** Handshakes, skylines, trending-up graphs, light-bulb icons, digital-blue-circuitry, briefcases, gears, etc. — all banned.
+- **No metaphor literalism.** Do not draw a road with a safe turn, a wallet, a stressed founder, a clock, a key, a lock. Visual ideas come from typography, color, composition, abstract shapes, and texture — never from drawing the metaphor.
+- **No fabricated stats inside the image.** Numbers in the image must come from a real source cited in the post.
+- **No additional text beyond the headline + subtitle specified in the prompt.** No taglines, watermarks, extra labels, social handles, or stray words. The model often wants to add "trusted" or "premium" — block it explicitly.
+- **No bright colors outside the brand palette.** Strictly white, dark blue, brand green.
+- **Aspect ratio:** 4:5 portrait (1080×1350) is the default for both FB and IG. 1:1 (1080×1080) only when there's a deliberate reason.
+
+---
+
+## Variety Mandate
+
+When generating today's image prompt, the engine MUST review the **last 5 image prompts on the same channel** (read the most recent draft and published files in `meta/facebook/` or `meta/instagram/`) and ensure the new prompt differs meaningfully on at least three of these five axes:
+
+1. **Composition** — where does the eye go first? Centered, asymmetric, full-bleed type, off-axis, framed, layered, diagonal, stacked-hierarchy, color-blocked, edge-anchored.
+2. **Visual centerpiece** — what's carrying the image? The headline typography, a stat numeral, a geometric shape, a texture, negative space, a color block, a typographic echo / repetition.
+3. **Color dominance** — which color owns the most of the frame? White-dominant, dark-blue-dominant, green-dominant, balanced split, monochrome + single accent.
+4. **Headline treatment** — how is the headline rendered? Single weight centered, two-tone (different words different colors), oversized scale, mixed sizes, all caps, tight kerning, generous tracking, on a color block, on a texture, framed by negative space.
+5. **Mood** — calm/quiet, confident/declarative, sober/serious, contemplative, scroll-stopping/loud, editorial/restrained.
+
+If three of those five aren't different from any of the last 5 prompts on this channel, redesign before writing the prompt.
+
+---
+
+## Composition Vocabulary (inspiration, not templates)
+
+These are *patterns* — the engine combines and adapts them. Mix axes freely. Don't stick rigidly to any single one.
+
+- **Editorial pull-quote** — centered headline on a clean field with one tiny accent
+- **Asymmetric color-block split** — frame divided into two solid color regions, headline anchored in one
+- **Stat hero** — a single large number or percentage carries the image; supporting text smaller
+- **Typographic poster** — oversized headline that fills the frame, may bleed to the edges
+- **Two-tone headline** — different words/phrases of the headline rendered in different brand colors for emphasis
+- **Echoed type** — the same word/phrase appears at two different sizes or weights, creating visual rhythm
+- **Vertical/horizontal band layout** — a single solid color band of varying width holds part of the composition
+- **Framed document** — a thin border, like a financial memo or letterhead, surrounds the headline
+- **Texture-anchored** — a real-world texture (concrete, stone, paper grain, brushed metal, raw linen) occupies a region of the frame; headline sits on the clean part
+- **Layered geometry** — overlapping rectangles or squares in the brand colors create depth; headline sits within or alongside
+- **Negative-space hero** — the headline is small, deliberately surrounded by empty space; the emptiness is the design
+- **Color-blocked footer** — the bottom 1/3 is a solid dark blue or green block holding the subtitle and badge; headline sits on the white above
+- **Diagonal split** — a clean diagonal line divides white and a brand color; headline straddles or is in one half
+- **Monogram anchor** — a single oversized geometric form (circle, square, triangle, vertical bar) in green or dark blue acts as the visual anchor; headline alongside
+
+The engine should generate at least 3 different composition ideas per post and pick the strongest, biased toward whatever has *not* been used recently on that channel.
+
+---
+
+## Visual Element Vocabulary (also inspiration)
+
+When the design wants a non-typographic element:
+
+- **Geometric primitives** — circles, squares, rectangles, triangles, vertical/horizontal bars, simple outlined shapes (the badge mark fits here)
+- **Real-world textures (close-up, shallow depth)** — exposed concrete, brushed steel, matte stone, aged paper grain, raw linen, wood grain, marble
+- **Subtle patterns** — fine grid, dot pattern, thin diagonal stripes, faint topographic lines (use sparingly, never busy)
+- **Gradients within the palette** — soft transitions from white to a tinted near-white, or from dark blue to a slightly lighter blue (no rainbow gradients ever)
+- **Negative space / paper white** — emptiness as a design element, framing the typography
+
+---
+
+## Per-Channel Bias (loose, not rigid)
+
+These are tendencies, not rules. Mix when the post calls for it.
+
+- **Facebook** tends toward more *editorial* / quieter / longer-caption-friendly compositions — text-forward, restrained, white or balanced color emphasis. Reader is more analytical, scrolls slower, can sit with a quieter image.
+- **Instagram** tends toward more *graphic* / scroll-stopping / image-first compositions — bolder typography, dark or color-blocked emphasis, deliberately confident. Reader scrolls fast and the image has to earn the pause.
+
+But both feeds need internal variety. Don't let FB become "always white centered" and IG become "always dark and bold." Surprise the reader within each feed.
+
+---
 
 ## Image-Prompt Best Practices for Embedded Text
 
-ChatGPT Image 2 is the best current option for rendering text accurately in images. Nano Banana is more inconsistent — if generating with Nano Banana, expect to occasionally regenerate when text comes out garbled.
+ChatGPT Image 2 renders text accurately and follows compositional instructions reliably. Nano Banana is more inconsistent on text — fall back if needed.
 
 ### DO
-- **Quote the exact text** in the prompt: `the headline reads exactly: "Fast cash isn't the same as affordable cash."` — quotation marks help the model lock in the literal string
-- **Specify font characteristics** — "modern sans-serif, bold weight, similar to Inter Bold" for headline; "modern sans-serif, regular weight, similar to Inter Regular" for subtitle
-- **Specify exact colors with hex codes** — `#FFFFFF`, `#242E40`, `#23A85B`
-- **Specify position precisely** — "headline centered horizontally, vertically positioned in the upper-middle third of the frame; subtitle on a single line directly below the headline, smaller size"
-- **Specify aspect ratio at the start** — "4:5 portrait, 1080×1350 pixels"
-- **Add 'render the text exactly as written, with correct spelling and punctuation'** to reinforce
-- **State 'no other text anywhere in the image except the headline and subtitle specified'** to prevent the model from adding extra labels
+- **Quote the exact headline and subtitle text** in the prompt. Quotation marks help the model lock the literal string.
+- **Specify exact colors with hex codes** every time: `#FFFFFF`, `#242E40`, `#23A85B`.
+- **Specify font characteristics** — "modern sans-serif, bold weight, similar to Inter Bold or Söhne Bold."
+- **Specify the composition unambiguously** — describe what's in each region of the frame, where text is positioned, what visual elements sit where.
+- **Add 'render the text exactly as written, with correct spelling and punctuation.'**
+- **Add 'no other text anywhere in the image except the headline and SafeTurnAdvisory.com subtitle specified above.'**
+- **Specify aspect ratio at the start and end of the prompt.**
 
 ### DON'T
-- **No human faces, hands, bodies, or silhouettes.** AI-rendered humans never match the brand's real photography.
-- **No multi-element compositions** — flowing data, network nodes, infographic arrows, anything that "tells a story" through visuals
-- **No metaphor literalism** — do not draw a road with a safe turn, a wallet, a stressed business owner, etc.
-- **No corporate clip-art tropes** — handshakes, building skylines, abstract trending-up graphs, light-bulb icons, digital-blue-circuitry
-- **No bright colors beyond the brand palette** — strictly white, dark blue, single green accent. No reds, oranges, yellows.
-- **No additional text beyond the headline and subtitle** — no taglines, watermarks, social handles outside of `SafeTurnAdvisory.com` subtitle
+- Don't describe a "template" or "card" — describe THIS specific composition.
+- Don't reuse the same prompt skeleton with substituted words. Write a fresh prompt structured around the design idea you chose for this post.
+- Don't pile on conflicting instructions ("centered but also left-aligned"). Pick one.
+- Don't use vague style words like "professional" or "modern" alone — they're noise. Be concrete.
+
+---
 
 ## Output Structure in Each Draft File
 
-Each daily Meta draft file contains two sections:
-
 ```
-<!-- VISUAL: Pull-quote card. Format: 4:5 portrait. Text embedded. -->
+<!-- VISUAL: [one-line concept summary — composition + visual centerpiece for THIS post]. 4:5 portrait. Text embedded. -->
 
 [caption text — full, hashtags included]
 
@@ -58,124 +127,20 @@ Each daily Meta draft file contains two sections:
 
 ## Image Prompt (paste into ChatGPT Image 2 — recommended — or Nano Banana)
 
-[Full prompt — paste-ready, includes exact headline/subtitle text and full styling]
+[Full custom prompt for THIS post. No template substitutions — the prompt is written from scratch around the chosen composition idea, with exact hex codes, exact text in quotation marks, font specs, position descriptions, and a clear "no other text" constraint.]
 ```
 
-Just two sections. No "Text Overlay" / no "Add manually after generation" step. The image generator produces the finished asset.
+Two sections only. The visual comment summarizes the design concept (so a human skimming the file knows what's coming). The image prompt is a custom paragraph for that specific post.
 
-## Prompt Templates
+---
 
-### Template A — Light Editorial Pull-Quote (Facebook default)
+## Process for the Engine (per post)
 
-The quiet, restrained version. White background, dark-blue headline. Use for ~90% of Facebook posts.
+1. Read the caption and the post's core idea.
+2. Look at the last 5 prompts on this channel (drafts/ + published/). Note their compositions, color dominance, and visual centerpieces.
+3. Brainstorm 3 different design directions for this post — explicitly different from the recent 5 across the variety axes above.
+4. Pick the strongest direction (the one that best serves the post's specific message).
+5. Write a custom paste-ready prompt for that direction with exact text, hex codes, font specs, and composition.
+6. Add the one-line VISUAL concept summary at the top of the draft file.
 
-```
-A minimalist [4:5 portrait | 1:1 square] pull-quote graphic for a financial advisory brand.
-
-Background: pristine white #FFFFFF with a subtle paper-grain texture, faintly visible at close inspection.
-
-A single vertical sliver of brand green #23A85B running down the [left | right] edge, approximately 8% of the frame width, soft and unobtrusive.
-
-Centered horizontally, vertically positioned in the upper-middle third of the frame, render this headline text exactly as written, with correct spelling and punctuation: "[EXACT HEADLINE TEXT — pulled from the caption, 6–12 words]"
-The headline is in modern sans-serif typography, similar to Inter Bold or Söhne Bold, in dark blue #242E40, large enough to read clearly at thumbnail size, with comfortable line spacing.
-
-On a single line directly below the headline, smaller and lighter, render this subtitle text exactly: "SafeTurnAdvisory.com"
-The subtitle is in modern sans-serif regular weight, in brand green #23A85B.
-
-Bottom-[left | right] corner: a small geometric badge/seal mark in dark blue #242E40 outline only, simple and modern, approximately 6% of the frame width. No text inside the badge.
-
-NO other text anywhere in the image except the headline and the SafeTurnAdvisory.com subtitle specified above.
-NO people, faces, hands, silhouettes, decorative icons, clip-art, graphs, or infographic elements.
-
-Calm, professional, financial-advisory aesthetic. High-end editorial feel, like a quiet page in a financial quarterly.
-
-[4:5 portrait, 1080×1350 pixels | 1:1 square, 1080×1080 pixels].
-```
-
-Substitute every bracketed `[option]` per channel and per post (alternate edge sides for visual variety across the calendar).
-
-### Template C — Asymmetric Color-Block Poster (Instagram default)
-
-A fundamentally different *layout* than Template A — not just different colors. Template A is a centered editorial card on white. Template C is an asymmetric color-block composition with the headline left-aligned in a dark zone next to a bold green color block. Magazine-cover energy.
-
-Use for ~90% of Instagram posts. This is the deliberate visual differentiator from Facebook — side-by-side with a Template A image, the layouts read as obviously different design languages.
-
-```
-A bold, asymmetric [4:5 portrait | 1:1 square] poster graphic for a financial advisory brand.
-
-The frame is split vertically into two solid color blocks with a clean, crisp boundary between them — no gradient, no texture across the seam:
-- LEFT 30% of the frame: solid brand green #23A85B, full height. Flat color.
-- RIGHT 70% of the frame: solid dark blue #242E40, full height. Flat color.
-
-The seam between the two color blocks is a clean vertical line at 30% from the left edge.
-
-Inside the dark blue area (the right 70% of the frame), positioned vertically centered, render this headline text exactly as written, with correct spelling and punctuation: "[EXACT HEADLINE TEXT — pulled from the caption, 6–12 words]"
-The headline is left-aligned (NOT centered horizontally — left-aligned to a vertical axis approximately 5% inside the dark blue area, near but not touching the green/blue seam). Modern sans-serif typography, similar to Inter Bold or Söhne Bold, in pure white #FFFFFF, large and confident, breaking onto multiple lines if needed. Generous tracking, comfortable line spacing.
-
-Below the headline, on the same left-aligned axis, render this subtitle text exactly: "SafeTurnAdvisory.com"
-The subtitle is in modern sans-serif regular weight, smaller, in pure white #FFFFFF.
-
-Inside the green area (the left 30%), at the bottom, render a small geometric badge/seal mark in white #FFFFFF outline only, simple and modern, approximately 50% of the green block's width. No text inside the badge.
-
-NO other text anywhere in the image except the headline and the SafeTurnAdvisory.com subtitle specified above.
-NO people, faces, hands, silhouettes, decorative icons, clip-art, graphs, or infographic elements.
-NO additional shapes, lines, or accent marks beyond the two color blocks, the headline, the subtitle, and the small badge.
-NO horizontal bands, edge slivers, or border elements — the design IS the asymmetric color block.
-
-Confident, graphic, magazine-spread or movie-poster aesthetic. Strong asymmetric composition that reads as a deliberate design choice, not an unbalanced layout. Should feel like a deliberate poster, not a quote card.
-
-[4:5 portrait, 1080×1350 pixels | 1:1 square, 1080×1080 pixels].
-```
-
-Substitute every bracketed `[option]` per post. The 30/70 split stays constant across the calendar — that's the visual signature of the IG feed.
-
-### Template B — Architectural Texture (use sparingly, ~10% of posts on either channel)
-
-Use only when the post's core idea is genuinely structural (foundations, stability under pressure, etc.).
-
-```
-A minimalist [4:5 portrait | 1:1 square] graphic for a financial advisory brand.
-
-Background: pristine white #FFFFFF, with a subtle close-up architectural texture occupying the [top third | left third] of the frame — soft focus, [exposed concrete | brushed steel | matte stone | aged paper grain], in muted neutral tones with a faint dark blue #242E40 shadow gradient. The remainder of the frame is clean white empty space.
-
-Centered in the lower-middle of the frame, render this headline text exactly as written: "[EXACT HEADLINE TEXT — 6–12 words]"
-The headline is in modern sans-serif bold, similar to Inter Bold, in dark blue #242E40, large enough for thumbnail readability.
-
-On a single line directly below, smaller, lighter weight, render this subtitle exactly: "SafeTurnAdvisory.com"
-Subtitle in modern sans-serif regular, brand green #23A85B.
-
-Bottom-right corner: a small geometric badge/seal mark in dark blue #242E40 outline, approximately 6% of the frame width. No text inside the badge.
-
-NO green edge sliver in this variant — the architectural texture carries the visual weight.
-NO other text anywhere in the image except the headline and SafeTurnAdvisory.com subtitle specified above.
-NO people, decorative icons, clip-art, graphs, or infographic elements.
-
-Calm, grounded, structural — the visual equivalent of "stability under pressure".
-
-[4:5 portrait, 1080×1350 pixels | 1:1 square, 1080×1080 pixels].
-```
-
-## Channel-Specific Aspect Ratios
-
-- **Facebook** → **4:5 portrait (1080×1350)** preferred. 1:1 (1080×1080) acceptable second choice.
-- **Instagram** → **4:5 portrait (1080×1350)** preferred. 1:1 (1080×1080) for grid consistency or carousel use.
-
-## Instagram Safe Zone (when asking the generator to position text)
-
-For Instagram feed posts at 4:5, headline text should sit within the **center 80% vertically** so it isn't cropped when the post displays in IG's grid view (grid crops 4:5 down to 1:1 by trimming top and bottom). The "upper-middle third" position in Template A already satisfies this.
-
-Stories format is not used by this engine.
-
-## Recommended Generator: ChatGPT Image 2
-
-ChatGPT Image 2 renders text with high accuracy and follows positional instructions reliably. It's the safer default for these prompts.
-
-**Nano Banana** (Gemini 2.5 Flash Image) can also produce these but text rendering is less consistent — be ready to regenerate 1–2 times to get clean text.
-
-If Nano Banana keeps garbling the text after 2 retries, fall back to ChatGPT Image 2.
-
-## What This Engine Does NOT Do
-
-- The engine writes the prompt; the human runs it through ChatGPT Image 2 or Nano Banana.
-- The engine does NOT call any image-generation API directly.
-- The engine does NOT post FB/IG to Vista. Jake uploads the finished image alongside the caption to Vista manually.
+The goal: a follower scrolling the feed should never recognize "oh, here comes another Safe Turn quote card." Every post should look freshly designed for its specific idea.
