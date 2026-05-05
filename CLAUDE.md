@@ -67,35 +67,62 @@ See `voice-guide.md` for the full guide. The short version:
 
 **Bar test:** Would I say this to a founder at a bar who just told me their business is drowning in debt?
 
-## Content Rotation (6 Pillars)
+## Content Rotation (6 Pillars, Weighted)
 
-Rotate daily. **Never repeat the same pillar two days in a row on the same channel.** LinkedIn, Facebook, and Instagram each maintain their own independent pillar rotation.
+The audience — SMB owners in cash flow / MCA distress — needs **education** more than anything else: how factor rates work, what daily pulls actually do, what restructuring means, why the bank's "no" is a signal not a punishment. The pillar mix reflects that.
 
-1. **Contrarian** — Challenge conventional wisdom about business debt
-   - "More revenue won't fix this"
-   - "Your accountant isn't telling you the whole picture"
+### Target Weights (apply per channel, rolling 14-day window)
 
-2. **Relatable Pain** — Describe the exact feeling of cash flow pressure
-   - Money disappearing, lender calls, payroll stress
+| Pillar | Weight | Rough cadence |
+|---|---|---|
+| **Educational** | 50% | ~3–4 days per week |
+| **Relatable Pain** | 17% | ~1 day per week |
+| **Perspective Shift** | 13% | ~1 day per week |
+| **Authority Insight** | 8% | ~3 days per month |
+| **Contrarian** | 7% | ~2 days per month |
+| **Hypothetical Scenario** | 5% | ~1–2 days per month |
+
+When picking today's pillar, the engine should look at the **last 14 days on this channel** and pick the pillar most under-represented relative to target weight. This naturally enforces the distribution without rigid scheduling.
+
+### Rotation Rules
+
+- **Never repeat the same pillar two days in a row** — except Educational, which may run two consecutive days but **never three in a row**.
+- Educational is the default. The other 5 pillars are deliberate breaks from education when the post needs an emotional, contrarian, or reframing angle.
+- Each channel's rotation is independent. LinkedIn, Facebook, and Instagram can use different pillars on the same day.
+
+### The 6 Pillars
+
+1. **Educational (50%)** — Teach something specific the audience doesn't know
+   - Definitions: "What is a factor rate?", "What is debt restructuring?", "What is a Confession of Judgment?"
+   - Mechanics: how daily ACH pulls work, why MCA APRs hit triple digits, how stacking compounds
+   - Frameworks: 3 signs, 3 steps, decision matrices
+   - "Why your bank said no" type explanations
+   - **Posts should focus on the reader's problem, not industry mechanics trivia.** Educational means useful — not a lecture about facts the audience didn't ask for.
+
+2. **Relatable Pain (17%)** — Describe the exact feeling of cash flow pressure
+   - Money disappearing, lender calls, payroll stress, watching the account balance tick down
    - Make them think "how does this person know my life?"
+   - Emotional truth, not advice. The lift comes from being seen.
 
-3. **Educational** — Teach something specific (3 signs, 3 steps, frameworks)
-   - "3 signs your debt structure is killing your business"
-   - Keep it actionable but don't give away the whole playbook
-
-4. **Perspective Shift** — Reframe how they think about their problem
+3. **Perspective Shift (13%)** — Reframe how they think about their problem
    - Profit vs. cash flow, structure vs. revenue, breathing room vs. more sales
-   - The "aha moment" post
+   - The "aha moment" post — flips a belief 180°
+   - Use sparingly; the reframe lands harder when it's not the daily mode.
 
-5. **Authority Insight** — Share industry knowledge and patterns without being salesy
+4. **Authority Insight (8%)** — Share industry knowledge and patterns without being salesy
    - General observations about how debt structures work
    - Insights about the lending industry, MCA mechanics, creditor behavior
    - **Do NOT fabricate specific client experiences or claim "we see this all the time" unless it actually happened**
 
-6. **Hypothetical Scenario** — Realistic business situation clearly framed as hypothetical
+5. **Contrarian (7%)** — Challenge conventional wisdom about business debt
+   - "More revenue won't fix this"
+   - "Your accountant isn't telling you the whole picture"
+   - "The bank's 'no' is the most useful answer you got this year"
+
+6. **Hypothetical Scenario (5%)** — Realistic business situation clearly framed as hypothetical
    - Use **"Imagine..."** or **"Picture this..."** or **"Here's a common scenario..."**
    - **NEVER present a made-up story as if it actually happened to a real client**
-   - Stories hold attention (dwell time) and create emotional connection
+   - Stories hold attention (dwell time) and create emotional connection — but they're rare on purpose so they don't blur into pseudo-testimonials.
 
 Check the most recent file in each channel's `drafts/` and `published/` folders, plus `git log`, to determine the last pillar used **per channel** before generating today's posts:
 
