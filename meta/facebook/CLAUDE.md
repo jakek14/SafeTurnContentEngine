@@ -47,25 +47,19 @@ Facebook's Safe Turn audience skews 35–60, scrolls during research/lunch windo
 - **If a CTA link is essential, put it in the first comment** (this engine doesn't auto-create first comments — Jake adds the link manually after publish if needed).
 - Default: no link anywhere. CTA = "Learn more at the link in our bio" or just no CTA. Trust the brand recall.
 
-## Visual Direction (Required)
+## Visual Direction + Image Prompt (Required)
 
-Every Facebook post needs a visual. Write a one-line direction at the **very top of the file** as an HTML comment:
+Every Facebook post needs a visual. **Read `../image-style.md` for the full brand guide and prompt templates.** Each draft file must include three things:
 
-```
-<!-- VISUAL: Branded text-card on dark background with the pull quote: "Fast cash isn't the same as affordable cash." Safe Turn brand colors. Format: 4:5 portrait (1080×1350) preferred, 1:1 acceptable. -->
+1. A one-line `<!-- VISUAL: ... -->` HTML comment at the top (human-readable brief)
+2. A full **`## Image Prompt`** block (paste-ready for Nano Banana or ChatGPT Image 2)
+3. A **`## Text Overlay`** block (the headline + subtitle the human will add manually in Canva/Figma)
 
-[caption text starts here]
-```
+**Aspect ratio for Facebook:** 4:5 portrait (1080×1350) preferred — 33% more mobile screen real estate. 1:1 (1080×1080) acceptable second choice. Never 1.91:1 horizontal for organic.
 
-### Visual direction principles (2026, not 2018)
+See `../image-style.md` Template A (Pull-Quote Card) for default prompt structure. ~90% of FB posts use Template A; Template B (Architectural Texture) only when the core idea is genuinely structural.
 
-- **4:5 portrait (1080×1350) is the dominant feed format.** Takes 33% more mobile screen real estate than square — pushes the engagement UI below the fold = more dwell time.
-- **1:1 (1080×1080) is acceptable** but second choice.
-- **AVOID 1.91:1 horizontal for organic posts.** It's a leftover ad-format spec and underperforms in feed.
-- **No stock photos of people** (avoids UGC/influencer feel).
-- **Branded graphics:** text cards, simple icons, charts, abstract structural imagery.
-- **Pull a phrase from the caption** for text-card visuals — keeps the post coherent.
-- **The "20% text rule" is dead.** Replaced by Meta's "Image Text Rating" (OK/Low/Medium/High). High text overlay throttles distribution but doesn't reject. Keep overlay sparse — 1 short pull-quote, not a paragraph.
+The "20% text rule" is dead. Meta's current "Image Text Rating" (OK/Low/Med/High) throttles distribution as text density rises — keep the overlay to one short pull-quote, not a paragraph.
 
 ## Algorithm Signals
 
