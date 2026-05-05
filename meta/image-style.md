@@ -25,12 +25,15 @@ If two consecutive posts on the same channel look like the same design with diff
 
 ## Hard Rules (apply to every image)
 
-- **No human faces, hands, bodies, silhouettes.** AI-rendered humans never match a real-photography brand.
-- **No clip-art / corporate stock tropes.** Handshakes, skylines, trending-up graphs, light-bulb icons, digital-blue-circuitry, briefcases, gears, etc. — all banned.
-- **No metaphor literalism.** Do not draw a road with a safe turn, a wallet, a stressed founder, a clock, a key, a lock. Visual ideas come from typography, color, composition, abstract shapes, and texture — never from drawing the metaphor.
+- **Photography, charts, documents, people, and real-world imagery are ALL allowed** — they are encouraged when they serve the post better than typography alone. The goal is variety: a feed that mixes data viz, photography, abstract design, and pure typography across different posts.
+- **People guidance:** Real-looking professional figures are fine. Lean toward editorial photography aesthetic over generic stock photo. Avoid "happy stock model with a clipboard giving a thumbs-up." Better directions: a business owner from behind looking at documents, hands on a contract, an over-the-shoulder shot of someone at a laptop, a candid moment in a real-feeling office. NEVER render specific real people, executives, or anyone identifiable as a Safe Turn team member (the brand uses real team photography for that — AI-generated humans must not impersonate real people).
+- **Charts/graphs:** Allowed when they convey real data from the post's research. Keep them clean, minimal, brand-colored (dark blue / green / white only). Bar charts, simple line graphs, callout numbers all fine. NEVER fabricate data — every number in a chart must trace to a source cited in the commit message.
+- **Documents:** Allowed. Macro shots of contracts, term sheets, statements, ledgers all work. Type on documents may be readable if it's generic legal/financial language, or kept blurred for atmospheric purposes. NEVER reproduce real client documents or recognizable brand letterhead.
+- **Stock-trope avoidance (still applies):** Don't lean on the clichés — handshakes-over-the-table, generic suit-and-briefcase guy, "puzzle pieces fitting together," light-bulb-equals-idea, digital-blue-circuitry, gears, a businessman jumping with arms raised. These read as AI-template content. Aim for editorial photography quality, not corporate clip-art.
+- **No metaphor literalism:** Don't draw a road with a "safe turn." Don't draw a wallet bleeding cash. The brand's visual ideas come from real-feeling environments and quality imagery, not literal illustrations of metaphors.
 - **No fabricated stats inside the image.** Numbers in the image must come from a real source cited in the post.
 - **No additional text beyond the headline + subtitle specified in the prompt.** No taglines, watermarks, extra labels, social handles, or stray words. The model often wants to add "trusted" or "premium" — block it explicitly.
-- **No bright colors outside the brand palette.** Strictly white, dark blue, brand green.
+- **Color palette is still strict:** White, dark blue `#242E40`, brand green `#23A85B`. Photographic images that include other natural colors (skin tones, paper warmth, wood grain, sky blue, sunlight) are fine — that's photography. But: no neon brights, no rainbow gradients, no off-brand accent colors layered onto graphics.
 - **Aspect ratio:** 4:5 portrait (1080×1350) is the default for both FB and IG. 1:1 (1080×1080) only when there's a deliberate reason.
 
 ---
@@ -72,15 +75,40 @@ The engine should generate at least 3 different composition ideas per post and p
 
 ---
 
-## Visual Element Vocabulary (also inspiration)
+## Visual Element Vocabulary (inspiration — mix freely)
 
-When the design wants a non-typographic element:
+**Photographic / real imagery:**
+- **People in editorial business contexts** — over-the-shoulder shots, hands on documents, a figure looking out of an office window from behind, candid working moments. Editorial photography quality, not stock-photo artificial.
+- **Real documents** — close-ups of contracts, term sheets, statements, ledgers; folded papers; signed pages with pen
+- **Office environments** — empty desks with morning light, conference rooms, professional bookshelves, a workspace mid-task
+- **Buildings and cityscapes** — modern office buildings, financial districts, architectural facades at golden hour or under overcast skies
+- **Material objects** — calculators, fountain pens, leather-bound notebooks, professional desk accessories, a glass of water, eyeglasses on documents
+- **Currency and financial materials** — stacks of paper currency, coin arrangements, financial publications (used tastefully, never literal "money raining down" tropes)
 
-- **Geometric primitives** — circles, squares, rectangles, triangles, vertical/horizontal bars, simple outlined shapes (the badge mark fits here)
-- **Real-world textures (close-up, shallow depth)** — exposed concrete, brushed steel, matte stone, aged paper grain, raw linen, wood grain, marble
-- **Subtle patterns** — fine grid, dot pattern, thin diagonal stripes, faint topographic lines (use sparingly, never busy)
-- **Gradients within the palette** — soft transitions from white to a tinted near-white, or from dark blue to a slightly lighter blue (no rainbow gradients ever)
-- **Negative space / paper white** — emptiness as a design element, framing the typography
+**Data visualization:**
+- **Bar charts** — clean, minimal, brand-colored, with real data from the post's research
+- **Simple line graphs** — trend visualization
+- **Callout numbers / stat heroes** — a single statistic rendered massive as the focal point
+- **Comparison side-by-side** — two simple visualizations contrasting two states
+- **Pie / donut charts** — used sparingly, when they actually clarify
+- ALWAYS attribute data to a real source. NEVER fabricate numbers.
+
+**Abstract design:**
+- **Geometric primitives** — circles, squares, rectangles, triangles, vertical/horizontal bars
+- **Layered shapes** — overlapping rectangles or color blocks creating depth
+- **Halftone / duotone treatments** — real photographs rendered in just dark blue + white
+- **Real-world textures** — exposed concrete, brushed steel, matte stone, aged paper grain, raw linen, wood grain, marble
+- **Subtle patterns** — fine grid, dot pattern, thin diagonal stripes (sparingly)
+- **Light & shadow studies** — atmospheric, no objects needed
+- **Gradients within the palette** — soft white-to-near-white or dark-blue-to-lighter-blue
+- **Negative space** — emptiness as a deliberate design choice
+
+**Typography-driven:**
+- Pure typographic posters where the design IS the type (use occasionally, not as default)
+- Two-tone headlines (different words different brand colors)
+- Oversized scale, mixed weights, generous tracking
+
+The mix matters. A feed that's all photos = generic stock-marketing brand. A feed that's all text cards = engine output. A healthy feed alternates: photo-heavy days, data-heavy days, abstract-design days, typography days.
 
 ---
 
