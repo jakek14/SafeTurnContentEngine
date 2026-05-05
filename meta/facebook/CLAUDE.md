@@ -49,11 +49,12 @@ Facebook's Safe Turn audience skews 35–60, scrolls during research/lunch windo
 
 ## Visual Direction + Image Prompt (Required)
 
-Every Facebook post needs a visual. **Read `../image-style.md` for the full brand guide and prompt templates.** Each draft file must include three things:
+Every Facebook post needs a visual. **Read `../image-style.md` for the full brand guide and prompt templates.** Each draft file must include two things:
 
 1. A one-line `<!-- VISUAL: ... -->` HTML comment at the top (human-readable brief)
-2. A full **`## Image Prompt`** block (paste-ready for Nano Banana or ChatGPT Image 2)
-3. A **`## Text Overlay`** block (the headline + subtitle the human will add manually in Canva/Figma)
+2. A full **`## Image Prompt`** block (paste-ready for ChatGPT Image 2 or Nano Banana)
+
+The image prompt embeds the headline and subtitle text directly in the generated image — **no post-production editing in Canva or Figma is needed**. Paste the prompt into ChatGPT Image 2 (recommended) and the output is post-ready.
 
 **Aspect ratio for Facebook:** 4:5 portrait (1080×1350) preferred — 33% more mobile screen real estate. 1:1 (1080×1080) acceptable second choice. Never 1.91:1 horizontal for organic.
 
