@@ -5,9 +5,9 @@ Shared brand visual identity for Facebook and Instagram. Each daily Meta post mu
 ## Brand Visual Identity (sourced from safeturnadvisory.com)
 
 - **Primary palette:**
-  - Off-white background `#FAFAFA` (pristine, slight warmth — not pure white)
-  - Deep navy `#0F1B2D` (text, structural elements, badge outlines)
-  - Muted teal accent `#3A8A8A` (subtitle text, single edge sliver, used sparingly)
+  - White background `#FFFFFF` (clean, pure white)
+  - Dark blue `#242E40` (headline text, structural elements, badge outlines)
+  - Brand green `#23A85B` (subtitle text, single edge sliver — the only color note, used sparingly)
 - **Typography zone:** Sans-serif geometric/humanist family. Specify "modern sans-serif similar to Inter, Söhne, or Neue Haas Grotesk" in the prompt.
 - **Aesthetic:** Minimalist corporate financial advisory. Calm, reassuring authority. Buttoned-up but not cold.
 - **Distinctive motif:** A small geometric badge/seal mark recurs throughout the brand — included as a quiet anchor in the bottom corner of every image (outline only, no internal text).
@@ -18,11 +18,11 @@ Shared brand visual identity for Facebook and Instagram. Each daily Meta post mu
 Every Meta post uses this format. The image generator produces a finished, post-ready asset with the headline and subtitle rendered directly in the image. No post-production.
 
 **Structure:**
-- Pristine off-white background with subtle paper-texture grain
-- A single thin vertical sliver of muted teal running down one edge
-- **Headline text rendered in the upper-middle center** — bold sans-serif, deep navy, exact wording specified in the prompt
-- **Subtitle text rendered below the headline** — lighter weight sans-serif, muted teal, the URL `SafeTurnAdvisory.com`
-- Bottom corner: small geometric badge mark (dark navy outline, no internal text)
+- Pristine white background with subtle paper-texture grain
+- A single thin vertical sliver of brand green running down one edge
+- **Headline text rendered in the upper-middle center** — bold sans-serif, dark blue, exact wording specified in the prompt
+- **Subtitle text rendered below the headline** — lighter weight sans-serif, brand green, the URL `SafeTurnAdvisory.com`
+- Bottom corner: small geometric badge mark (dark blue outline, no internal text)
 - No people, no stock photography, no decorative icons
 
 ## Image-Prompt Best Practices for Embedded Text
@@ -32,7 +32,7 @@ ChatGPT Image 2 is the best current option for rendering text accurately in imag
 ### DO
 - **Quote the exact text** in the prompt: `the headline reads exactly: "Fast cash isn't the same as affordable cash."` — quotation marks help the model lock in the literal string
 - **Specify font characteristics** — "modern sans-serif, bold weight, similar to Inter Bold" for headline; "modern sans-serif, regular weight, similar to Inter Regular" for subtitle
-- **Specify exact colors with hex codes** — `#FAFAFA`, `#0F1B2D`, `#3A8A8A`
+- **Specify exact colors with hex codes** — `#FFFFFF`, `#242E40`, `#23A85B`
 - **Specify position precisely** — "headline centered horizontally, vertically positioned in the upper-middle third of the frame; subtitle on a single line directly below the headline, smaller size"
 - **Specify aspect ratio at the start** — "4:5 portrait, 1080×1350 pixels"
 - **Add 'render the text exactly as written, with correct spelling and punctuation'** to reinforce
@@ -43,7 +43,7 @@ ChatGPT Image 2 is the best current option for rendering text accurately in imag
 - **No multi-element compositions** — flowing data, network nodes, infographic arrows, anything that "tells a story" through visuals
 - **No metaphor literalism** — do not draw a road with a safe turn, a wallet, a stressed business owner, etc.
 - **No corporate clip-art tropes** — handshakes, building skylines, abstract trending-up graphs, light-bulb icons, digital-blue-circuitry
-- **No bright colors** — strictly off-white, navy, single teal accent. No reds, oranges, yellows.
+- **No bright colors beyond the brand palette** — strictly white, dark blue, single green accent. No reds, oranges, yellows.
 - **No additional text beyond the headline and subtitle** — no taglines, watermarks, social handles outside of `SafeTurnAdvisory.com` subtitle
 
 ## Output Structure in Each Draft File
@@ -73,17 +73,17 @@ Use for ~90% of posts.
 ```
 A minimalist [4:5 portrait | 1:1 square] pull-quote graphic for a financial advisory brand.
 
-Background: pristine off-white #FAFAFA with a subtle paper-grain texture, faintly visible at close inspection.
+Background: pristine white #FFFFFF with a subtle paper-grain texture, faintly visible at close inspection.
 
-A single vertical sliver of muted teal #3A8A8A running down the [left | right] edge, approximately 8% of the frame width, soft and unobtrusive.
+A single vertical sliver of brand green #23A85B running down the [left | right] edge, approximately 8% of the frame width, soft and unobtrusive.
 
 Centered horizontally, vertically positioned in the upper-middle third of the frame, render this headline text exactly as written, with correct spelling and punctuation: "[EXACT HEADLINE TEXT — pulled from the caption, 6–12 words]"
-The headline is in modern sans-serif typography, similar to Inter Bold or Söhne Bold, in deep navy #0F1B2D, large enough to read clearly at thumbnail size, with comfortable line spacing.
+The headline is in modern sans-serif typography, similar to Inter Bold or Söhne Bold, in dark blue #242E40, large enough to read clearly at thumbnail size, with comfortable line spacing.
 
 On a single line directly below the headline, smaller and lighter, render this subtitle text exactly: "SafeTurnAdvisory.com"
-The subtitle is in modern sans-serif regular weight, in muted teal #3A8A8A.
+The subtitle is in modern sans-serif regular weight, in brand green #23A85B.
 
-Bottom-[left | right] corner: a small geometric badge/seal mark in dark navy #0F1B2D outline only, simple and modern, approximately 6% of the frame width. No text inside the badge.
+Bottom-[left | right] corner: a small geometric badge/seal mark in dark blue #242E40 outline only, simple and modern, approximately 6% of the frame width. No text inside the badge.
 
 NO other text anywhere in the image except the headline and the SafeTurnAdvisory.com subtitle specified above.
 NO people, faces, hands, silhouettes, decorative icons, clip-art, graphs, or infographic elements.
@@ -102,17 +102,17 @@ Use only when the post's core idea is genuinely structural (foundations, stabili
 ```
 A minimalist [4:5 portrait | 1:1 square] graphic for a financial advisory brand.
 
-Background: pristine off-white #FAFAFA, with a subtle close-up architectural texture occupying the [top third | left third] of the frame — soft focus, [exposed concrete | brushed steel | matte stone | aged paper grain], in muted neutral tones with a faint navy #0F1B2D shadow gradient. The remainder of the frame is clean off-white empty space.
+Background: pristine white #FFFFFF, with a subtle close-up architectural texture occupying the [top third | left third] of the frame — soft focus, [exposed concrete | brushed steel | matte stone | aged paper grain], in muted neutral tones with a faint dark blue #242E40 shadow gradient. The remainder of the frame is clean white empty space.
 
 Centered in the lower-middle of the frame, render this headline text exactly as written: "[EXACT HEADLINE TEXT — 6–12 words]"
-The headline is in modern sans-serif bold, similar to Inter Bold, in deep navy #0F1B2D, large enough for thumbnail readability.
+The headline is in modern sans-serif bold, similar to Inter Bold, in dark blue #242E40, large enough for thumbnail readability.
 
 On a single line directly below, smaller, lighter weight, render this subtitle exactly: "SafeTurnAdvisory.com"
-Subtitle in modern sans-serif regular, muted teal #3A8A8A.
+Subtitle in modern sans-serif regular, brand green #23A85B.
 
-Bottom-right corner: a small geometric badge/seal mark in dark navy #0F1B2D outline, approximately 6% of the frame width. No text inside the badge.
+Bottom-right corner: a small geometric badge/seal mark in dark blue #242E40 outline, approximately 6% of the frame width. No text inside the badge.
 
-NO teal edge sliver in this variant — the architectural texture carries the visual weight.
+NO green edge sliver in this variant — the architectural texture carries the visual weight.
 NO other text anywhere in the image except the headline and SafeTurnAdvisory.com subtitle specified above.
 NO people, decorative icons, clip-art, graphs, or infographic elements.
 
