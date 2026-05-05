@@ -13,21 +13,36 @@ Non-secret reference for Vista Social IDs used by this engine. The API key and c
 - **workflow_gid:** `69ca8c24d75620ecec4eb0b8`
 - Posts created by this engine are assigned to this workflow → land as **Pending Review** for Jake + Peter to approve before publishing
 
-## Profiles
+## Profiles (verified 2026-05-05 via findProfiles)
 
-| Channel | network_code | profile_id | Status |
-|---|---|---|---|
-| LinkedIn (Safe Turn Advisory) | `linkedin` | `703776` | Live in v1 engine |
-| Facebook (Safe Turn Advisory) | `facebook` | TBD — pending Jake/Peter to add | |
-| Instagram (Safe Turn Advisory) | `instagram` | `instagram_business` | TBD — pending Jake/Peter to add |
+| Channel | profile_id | Vista profile name |
+|---|---|---|
+| LinkedIn | `703776` | Safe Turn Advisory (LinkedIn Company Page) |
+| Facebook | `703765` | SafeTurn Advisory (Facebook Page) |
+| Instagram | `724863` | safeturnadvisory (Instagram Profile) |
 
-The agent **must dynamically discover** Facebook + Instagram profile IDs at runtime (via `listProfiles`) rather than hard-coding them, since they aren't connected yet. Once added, this file can be updated for documentation but the agent should keep using runtime discovery so a profile change doesn't break the engine.
+(Note: Vista also has profile `703768 HFMNJ (Facebook Page)` — that's a different brand. Do NOT post to it.)
 
-**Routing rules:**
-- LinkedIn caption → only the LinkedIn profile (network_code `linkedin`)
-- Facebook caption → only the Facebook profile (network_code `facebook`)
-- Instagram caption → only the Instagram profile (network_code `instagram` or `instagram_business`)
-- **Never post the same caption to multiple network types** — each channel has its own caption.
+## Posting Modes (per channel)
+
+Vista's `createOrUpdatePost` has two routing patterns. Each Safe Turn channel uses a different one:
+
+| Channel | Mode | API call |
+|---|---|---|
+| LinkedIn | **Pending Review** (Approve/Reject) | `profile_id: 703776, workflow_gid: "69ca8c24d75620ecec4eb0b8"` |
+| Facebook | **Editable Draft** | `profile_id: 703765, draft: true` (omit workflow_gid) |
+| Instagram | **Editable Draft** | `profile_id: 724863, draft: true` (omit workflow_gid) |
+
+### Why the split
+
+- **LinkedIn is text-only** — no image to add — so Pending Review (approve/reject only, no editing) is appropriate. Caption ships as-is once Jake/Peter approve.
+- **Facebook + Instagram require images** — Jake creates the visual after the caption is generated. Editable Draft mode lets him edit the caption, attach the image, and publish manually from Vista.
+
+### Critical rule
+
+- `workflow_gid` and `draft: true` are **mutually exclusive** code paths in Vista. Never combine them.
+- Never pass `workflow_gid: null` — omit the field entirely if not using a workflow.
+- Each caption posts to exactly ONE profile_id — never post the same caption across multiple network types.
 
 ## MCP Endpoint
 

@@ -1,70 +1,120 @@
 # Facebook — Channel Rules
 
-Read `../../CLAUDE.md` first for voice, pillars, audience, industry facts, and craft rules. This file covers Facebook-specific formatting only.
+Read `../../CLAUDE.md` first for voice, pillars, audience, industry facts, and craft rules. This file covers Facebook-specific formatting only — based on 2026 algorithm behavior, not 2018-era advice.
 
 ## Audience Note
 
-Facebook's Safe Turn audience skews slightly older (40–60), reads longer captions, more analytical mindset, often scrolling during work hours or weekends. They're more patient than IG users with longer setups before the payoff.
+Facebook's Safe Turn audience skews 35–60, scrolls during research/lunch windows, more analytical than IG. They tolerate slightly longer captions than IG but the same scroll fatigue applies — earn the click to expand.
 
 ## Format
 
-- **Length:** 1,000–1,800 characters (~150–250 words)
-  - FB has no aggressive truncation cliff like IG — captions display nearly in full
-  - Caption can carry more setup before the reframe
-- **Paragraph style:** short paragraphs, 2–3 lines each, with blank lines between
-- **Emojis:** allowed sparingly, 0–2 per post, never as bullets
+- **Length:** 400–1,000 characters (~70–180 words)
+  - Sweet spot for B2B authority + readability
+  - Posts under 80 chars often outperform on engagement, but feel thin for Safe Turn's authority play
+  - Going longer than 1,000 chars dilutes — split into multiple posts instead
+- **Paragraph style:** very short paragraphs, 1–3 lines each, blank lines between
+- **Bullets:** **no bullet symbols (•, –, ✓).** Facebook strips them ugly. Use line breaks to separate items instead.
+- **Emojis:** 0–2 max per post, never as bullets, never as decoration
 
-## The Hook
+## The Hook (Critical — Mobile Fold ≈ 125 chars)
 
-- First 1–2 lines should still be scroll-stopping, but you have more room than on IG
-- Use: data drops, contrarian openers, story setups, pattern interrupts
-- The hook does not need to stand alone the way an IG hook does — FB shows ~250 chars before "See more"
+- **The "See more" cut on FB mobile is ~125 characters** — same brutal truncation as Instagram
+- **First line must be scroll-stopping AND stand alone at 125 chars**
+- Desktop fold is ~477 chars (more forgiving), but mobile is the dominant surface
+- Front-load the hook. Do not bury the lede behind a setup sentence.
+
+### Hook patterns that work on FB (B2B 35–60)
+- **Specific number:** "3 things I wish I knew before taking my first MCA"
+- **Contrarian claim:** "Most owners think more revenue fixes this. It doesn't."
+- **Named scenario:** "Imagine a $4M HVAC company with 4 daily MCA pulls."
+- **Direct stakes:** "If you've stacked two advances, your next 6 months matter more than the last 6."
+
+### Hook patterns that **fail** on FB (algorithm penalty)
+- **No IG-style cliffhangers:** "Wait till you see #3" → punished as engagement bait
+- **No curiosity-gap clickbait:** "You won't believe what one lender did" → demoted
+- **No "LIKE if you agree" / "COMMENT YES" / "TAG a friend"** → 20–95% reach reduction + page-level penalty for repeat use
 
 ## Hashtags
 
-- **2–5 hashtags** — FB's algorithm largely ignores hashtags, so don't stuff
-- Place at the end of the caption
-- Mix: 1–2 brand + 1–3 topical
-- Brand: `#SafeTurnAdvisory`
-- Topical: `#SmallBusiness` `#BusinessDebt` `#CashFlow` `#DebtRestructuring` `#MCARelief` `#BusinessOwner` `#SMB`
+- **1–2 niche hashtags MAX.** Facebook's algorithm relies on engagement signals + AI recommendations, NOT hashtag discovery.
+- Stuffing 5+ hashtags **suppresses reach.**
+- Place at the very end. Pick from: `#SafeTurnAdvisory` `#BusinessDebt` `#MCARelief` `#CashFlow` `#DebtRestructuring` — pick the ONE or TWO most relevant to today's post, not a kitchen sink.
 
 ## Links
 
-- Soft links to safeturnadvisory.com are tolerable on FB but still reduce reach
-- **Default: no link in body.** Use a comment with the link if a CTA is needed.
-- Never put a tracking link or UTM in the post body — looks salesy
+- **NEVER put links in the caption body.** Link posts get ~0.03% engagement — roughly half of non-link posts. Only ~2% of top-viewed FB posts contain links.
+- Plain-text URLs and hyperlinked previews both trigger the penalty.
+- **If a CTA link is essential, put it in the first comment** (this engine doesn't auto-create first comments — Jake adds the link manually after publish if needed).
+- Default: no link anywhere. CTA = "Learn more at the link in our bio" or just no CTA. Trust the brand recall.
 
 ## Visual Direction (Required)
 
 Every Facebook post needs a visual. Write a one-line direction at the **very top of the file** as an HTML comment:
 
 ```
-<!-- VISUAL: Branded text-card on dark background with the pull quote: "Fast cash isn't the same as affordable cash." Safe Turn brand colors. -->
+<!-- VISUAL: Branded text-card on dark background with the pull quote: "Fast cash isn't the same as affordable cash." Safe Turn brand colors. Format: 4:5 portrait (1080×1350) preferred, 1:1 acceptable. -->
 
 [caption text starts here]
 ```
 
-Visual direction principles:
-- **No stock photos of people** (avoid UGC/influencer feel)
-- **Branded graphics:** text cards, simple icons, charts, abstract structural imagery
-- **Pull a phrase from the caption** for text-card visuals — keeps the post coherent
-- FB visuals can be horizontal (1.91:1) or square (1:1) — note the format if it matters
+### Visual direction principles (2026, not 2018)
+
+- **4:5 portrait (1080×1350) is the dominant feed format.** Takes 33% more mobile screen real estate than square — pushes the engagement UI below the fold = more dwell time.
+- **1:1 (1080×1080) is acceptable** but second choice.
+- **AVOID 1.91:1 horizontal for organic posts.** It's a leftover ad-format spec and underperforms in feed.
+- **No stock photos of people** (avoids UGC/influencer feel).
+- **Branded graphics:** text cards, simple icons, charts, abstract structural imagery.
+- **Pull a phrase from the caption** for text-card visuals — keeps the post coherent.
+- **The "20% text rule" is dead.** Replaced by Meta's "Image Text Rating" (OK/Low/Medium/High). High text overlay throttles distribution but doesn't reject. Keep overlay sparse — 1 short pull-quote, not a paragraph.
+
+## Algorithm Signals
+
+The 2026 FB algorithm rewards (in priority order):
+1. **Comments — long comments and back-and-forth threads weighted highest**
+2. **Shares**
+3. **Saves** (signal value to the reader)
+4. **Watch time** (on video posts — irrelevant to text posts)
+5. **Reactions** (lowest weight)
+6. **Likes** (lowest weight)
+
+A soft, genuine question at the close invites comments without triggering engagement-bait penalties. Do NOT use "comment YES below" framing — use "Curious how others handle this — what's worked for you?" or similar real questions.
+
+**Originality is rewarded.** Reposted or aggregator content is downranked. Every Safe Turn post must be original — never recycled from other sources.
 
 ## Hard Don'ts
 
-- No engagement bait ("Comment YES if you agree", "Tag a friend")
-- No reposting Instagram caption verbatim — FB post should be longer with more setup, different hook
-- No reposting LinkedIn caption verbatim — LinkedIn is operator-to-operator B2B; FB is broader audience
+- **No bullet symbols** (•, –, ✓) — line breaks only
+- **No engagement bait** ("LIKE if…", "COMMENT YES", "SHARE with…", "TAG a friend who…") — algorithm penalty 20–95%
+- **No links in caption body** — kills reach
+- **No reposting Instagram caption verbatim** — FB tolerates 100–200 more chars and supports a softer hook setup; treat as a different post
+- **No reposting LinkedIn caption verbatim** — LinkedIn is professional B2B with hashtags; FB is conversational with minimal hashtags
+- **No ALL CAPS for emphasis** — looks like spam
+- **No cliffhanger hooks** ("Wait till you see…") — penalized
 
 ## Post Structure
 
-1. **Visual direction** (HTML comment at top of file)
-2. **Hook** (1–2 lines, scroll-stopping)
-3. **Setup / context** (FB tolerates 2–3 sentences here)
-4. **Reframe or insight** (the "aha" moment)
-5. **Light solution insight** (principle, not pitch)
-6. **Soft close** (optional — "If this sounds familiar..." or nothing)
-7. **Hashtags** (2–5)
+1. **Visual direction** (HTML comment at top of file, with 4:5 or 1:1 spec)
+2. **Hook** (line 1, ≤125 chars, stands alone, no clickbait)
+3. **Body** (2–4 short paragraphs, plain text, line breaks not bullets)
+4. **Tactical takeaway or insight** (1–2 sentences)
+5. **Soft genuine question** (optional close — invites comments without baiting)
+6. **Hashtags** (1–2 niche only)
+
+### Skeleton
+
+```
+<!-- VISUAL: ... 4:5 portrait ... -->
+
+[Hook ≤125 chars: specific claim, number, or named scenario]
+
+[2–3 sentence story/insight in plain text]
+
+[Tactical takeaway: principle, framework, or reframe]
+
+[Soft genuine question — optional, only if natural]
+
+#SafeTurnAdvisory #BusinessDebt
+```
 
 ## Output
 
