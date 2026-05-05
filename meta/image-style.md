@@ -94,35 +94,40 @@ Calm, professional, financial-advisory aesthetic. High-end editorial feel, like 
 
 Substitute every bracketed `[option]` per channel and per post (alternate edge sides for visual variety across the calendar).
 
-### Template C — Dark Bold Poster (Instagram default)
+### Template C — Asymmetric Color-Block Poster (Instagram default)
 
-The bold, graphic version. Dark blue background, white headline, green accent band. Use for ~90% of Instagram posts. This is the visual differentiator from Facebook.
+A fundamentally different *layout* than Template A — not just different colors. Template A is a centered editorial card on white. Template C is an asymmetric color-block composition with the headline left-aligned in a dark zone next to a bold green color block. Magazine-cover energy.
+
+Use for ~90% of Instagram posts. This is the deliberate visual differentiator from Facebook — side-by-side with a Template A image, the layouts read as obviously different design languages.
 
 ```
-A bold, minimalist [4:5 portrait | 1:1 square] poster graphic for a financial advisory brand.
+A bold, asymmetric [4:5 portrait | 1:1 square] poster graphic for a financial advisory brand.
 
-Background: solid dark blue #242E40, full bleed, with a very subtle paper-grain texture, faintly visible at close inspection. The dark blue is rich and slightly warm, not flat.
+The frame is split vertically into two solid color blocks with a clean, crisp boundary between them — no gradient, no texture across the seam:
+- LEFT 30% of the frame: solid brand green #23A85B, full height. Flat color.
+- RIGHT 70% of the frame: solid dark blue #242E40, full height. Flat color.
 
-A horizontal band of brand green #23A85B running across the bottom of the frame, approximately 6% of the frame height. Crisp edge, solid color.
+The seam between the two color blocks is a clean vertical line at 30% from the left edge.
 
-Centered horizontally, vertically positioned in the upper-middle third of the frame, render this headline text exactly as written, with correct spelling and punctuation: "[EXACT HEADLINE TEXT — pulled from the caption, 6–12 words]"
-The headline is in modern sans-serif typography, similar to Inter Bold or Söhne Bold, in pure white #FFFFFF, large and confident — noticeably bolder presence than an editorial layout. Comfortable line spacing, generous tracking.
+Inside the dark blue area (the right 70% of the frame), positioned vertically centered, render this headline text exactly as written, with correct spelling and punctuation: "[EXACT HEADLINE TEXT — pulled from the caption, 6–12 words]"
+The headline is left-aligned (NOT centered horizontally — left-aligned to a vertical axis approximately 5% inside the dark blue area, near but not touching the green/blue seam). Modern sans-serif typography, similar to Inter Bold or Söhne Bold, in pure white #FFFFFF, large and confident, breaking onto multiple lines if needed. Generous tracking, comfortable line spacing.
 
-On a single line directly below the headline, smaller and lighter, render this subtitle text exactly: "SafeTurnAdvisory.com"
-The subtitle is in modern sans-serif regular weight, in brand green #23A85B.
+Below the headline, on the same left-aligned axis, render this subtitle text exactly: "SafeTurnAdvisory.com"
+The subtitle is in modern sans-serif regular weight, smaller, in pure white #FFFFFF.
 
-Top-right corner: a small geometric badge/seal mark in white #FFFFFF outline only, simple and modern, approximately 6% of the frame width. No text inside the badge.
+Inside the green area (the left 30%), at the bottom, render a small geometric badge/seal mark in white #FFFFFF outline only, simple and modern, approximately 50% of the green block's width. No text inside the badge.
 
 NO other text anywhere in the image except the headline and the SafeTurnAdvisory.com subtitle specified above.
 NO people, faces, hands, silhouettes, decorative icons, clip-art, graphs, or infographic elements.
-NO white edge sliver or border — the dark background is full bleed except for the green bottom band.
+NO additional shapes, lines, or accent marks beyond the two color blocks, the headline, the subtitle, and the small badge.
+NO horizontal bands, edge slivers, or border elements — the design IS the asymmetric color block.
 
-Confident, graphic, magazine-poster aesthetic. Scroll-stopping presence on a busy Instagram feed.
+Confident, graphic, magazine-spread or movie-poster aesthetic. Strong asymmetric composition that reads as a deliberate design choice, not an unbalanced layout. Should feel like a deliberate poster, not a quote card.
 
 [4:5 portrait, 1080×1350 pixels | 1:1 square, 1080×1080 pixels].
 ```
 
-Substitute every bracketed `[option]` per post.
+Substitute every bracketed `[option]` per post. The 30/70 split stays constant across the calendar — that's the visual signature of the IG feed.
 
 ### Template B — Architectural Texture (use sparingly, ~10% of posts on either channel)
 
