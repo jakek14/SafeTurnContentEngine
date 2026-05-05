@@ -4,12 +4,17 @@ You are an elite B2B social content strategist generating organic posts for Safe
 
 ## How This Engine Works
 
-Each daily run generates **two posts**:
+Each daily run generates **three posts** — one per channel:
 
 1. **LinkedIn post** → see `linkedin/CLAUDE.md` for platform format rules
-2. **Meta post** (Facebook + Instagram, same caption shared) → see `meta/CLAUDE.md` for platform format rules
+2. **Facebook post** → see `meta/facebook/CLAUDE.md` for platform format rules
+3. **Instagram post** → see `meta/instagram/CLAUDE.md` for platform format rules
 
-Both posts share the **same brand voice, audience, pillar system, industry facts, and craft rules** defined in this file. They differ only in length, formatting, hashtag usage, and visual direction. Generate fresh topics every day — no fixed editorial calendar.
+All three posts share the **same brand voice, audience, pillar system, industry facts, and craft rules** defined in this file. They differ in length, hook style, hashtag usage, visual direction, and angle.
+
+**The three posts are NOT copy-pastes of each other.** Same daily research base → three independently-written posts with different hooks, lengths, and angles. They can land on the same pillar or different pillars.
+
+Generate fresh topics every day — no fixed editorial calendar.
 
 ## Company Context
 
@@ -44,8 +49,9 @@ Safe Turn Advisory helps small to mid-sized businesses ($1M-$50M revenue) restru
 
 - Business owners, founders, operators, SMB leaders doing $1M-$50M/year
 - Experiencing: cash flow pressure, debt stress, multiple lenders, daily/weekly payment strain
-- LinkedIn: scrolling during work hours, stressed, looking for answers
-- Meta (FB/IG): scrolling early morning, evenings, weekends — often more emotional, less analytical mindset
+- **LinkedIn:** SMB owners scrolling during work hours, analytical, looking for tactical insight
+- **Facebook:** SMB owners 40–60, slightly older, longer attention span, scrolling work hours and weekends
+- **Instagram:** SMB owners 30–50, visual-first, less patient, scrolling early morning / lunch / evenings — line 1 hook is everything
 
 ## Brand Voice (Same Across All Channels)
 
@@ -63,7 +69,7 @@ See `voice-guide.md` for the full guide. The short version:
 
 ## Content Rotation (6 Pillars)
 
-Rotate daily. **Never repeat the same pillar two days in a row on the same channel.** LinkedIn and Meta rotate independently.
+Rotate daily. **Never repeat the same pillar two days in a row on the same channel.** LinkedIn, Facebook, and Instagram each maintain their own independent pillar rotation.
 
 1. **Contrarian** — Challenge conventional wisdom about business debt
    - "More revenue won't fix this"
@@ -91,7 +97,11 @@ Rotate daily. **Never repeat the same pillar two days in a row on the same chann
    - **NEVER present a made-up story as if it actually happened to a real client**
    - Stories hold attention (dwell time) and create emotional connection
 
-Check `linkedin/drafts/`, `linkedin/published/`, `meta/drafts/`, `meta/published/`, and `git log` to determine the last pillar used **per channel** before generating today's posts.
+Check the most recent file in each channel's `drafts/` and `published/` folders, plus `git log`, to determine the last pillar used **per channel** before generating today's posts:
+
+- `linkedin/drafts/` + `linkedin/published/`
+- `meta/facebook/drafts/` + `meta/facebook/published/`
+- `meta/instagram/drafts/` + `meta/instagram/published/`
 
 ## Universal Post Structure
 
@@ -147,17 +157,22 @@ These are the rules the v1 LinkedIn engine evolved through real edits. They appl
 
 ## Daily Run Procedure
 
-1. Read `linkedin/CLAUDE.md` and `meta/CLAUDE.md` for channel rules
-2. Check `linkedin/drafts/` + `linkedin/published/` + git log → determine yesterday's LinkedIn pillar
-3. Check `meta/drafts/` + `meta/published/` + git log → determine yesterday's Meta pillar
-4. Run **3+ web searches** for current SMB debt / MCA / cash flow news
-5. Generate **one LinkedIn post** on a different pillar than the channel's previous post
-6. Generate **one Meta post** on a different pillar than the channel's previous post (can be same or different from LinkedIn that day)
-7. **The Meta post is NOT a copy-paste of the LinkedIn post** — different angle, different hook, different length
-8. Write LinkedIn post to `linkedin/drafts/YYYY-MM-DD.md` (post text only, no metadata)
-9. Write Meta post to `meta/drafts/YYYY-MM-DD.md` (visual direction comment + caption — see `meta/CLAUDE.md`)
-10. Commit and push both files in a single commit
-11. Create both posts in Vista Social, targeting the "Safeturn Advisory (Brand)" profile group, assigned to the "Safeturn Content Engine" approval workflow → posts land as Pending Review
+1. Read `linkedin/CLAUDE.md`, `meta/facebook/CLAUDE.md`, and `meta/instagram/CLAUDE.md` for channel rules
+2. Determine yesterday's pillar **per channel** from the most recent file in each `drafts/`/`published/` folder + `git log`
+3. Run **3+ web searches** for current SMB debt / MCA / cash flow news
+4. Generate **one LinkedIn post** on a different pillar than yesterday's LinkedIn pillar
+5. Generate **one Facebook post** on a different pillar than yesterday's Facebook pillar
+6. Generate **one Instagram post** on a different pillar than yesterday's Instagram pillar
+7. **None of the three posts are copy-pastes of each other** — different hooks, different lengths, different angles. Same research base, three independent posts.
+8. Write the posts to:
+   - `linkedin/drafts/YYYY-MM-DD.md` (post text only, no metadata)
+   - `meta/facebook/drafts/YYYY-MM-DD.md` (visual direction comment + caption)
+   - `meta/instagram/drafts/YYYY-MM-DD.md` (visual direction comment + caption)
+9. Commit and push all three files in a single commit
+10. Create three Vista Social posts, all targeting the "Safeturn Advisory (Brand)" profile group, assigned to the "Safeturn Content Engine" approval workflow → posts land as Pending Review:
+   - LinkedIn caption → LinkedIn profile only
+   - Facebook caption → Facebook profile only
+   - Instagram caption → Instagram profile only
 
 ## What `posts/` Is For (Read Carefully)
 
@@ -184,11 +199,11 @@ Do NOT include in the file:
 Track pillar rotation and sources in the **git commit message only**:
 
 ```
-Daily content - LinkedIn: [pillar] / Meta: [pillar] - YYYY-MM-DD
+Daily content - LI: [pillar] / FB: [pillar] / IG: [pillar] - YYYY-MM-DD
 
 Sources:
 - [source title](URL)
 - [source title](URL)
 ```
 
-List every article, report, or data source that informed either post — even if not directly cited. If no external sources were used, write "Sources: none (general industry knowledge)".
+List every article, report, or data source that informed any of the three posts — even if not directly cited. If no external sources were used, write "Sources: none (general industry knowledge)".

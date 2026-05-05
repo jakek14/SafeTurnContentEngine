@@ -19,9 +19,15 @@ Non-secret reference for Vista Social IDs used by this engine. The API key and c
 |---|---|---|---|
 | LinkedIn (Safe Turn Advisory) | `linkedin` | `703776` | Live in v1 engine |
 | Facebook (Safe Turn Advisory) | `facebook` | TBD — pending Jake/Peter to add | |
-| Instagram (Safe Turn Advisory) | `instagram` | TBD — pending Jake/Peter to add | |
+| Instagram (Safe Turn Advisory) | `instagram` | `instagram_business` | TBD — pending Jake/Peter to add |
 
 The agent **must dynamically discover** Facebook + Instagram profile IDs at runtime (via `listProfiles`) rather than hard-coding them, since they aren't connected yet. Once added, this file can be updated for documentation but the agent should keep using runtime discovery so a profile change doesn't break the engine.
+
+**Routing rules:**
+- LinkedIn caption → only the LinkedIn profile (network_code `linkedin`)
+- Facebook caption → only the Facebook profile (network_code `facebook`)
+- Instagram caption → only the Instagram profile (network_code `instagram` or `instagram_business`)
+- **Never post the same caption to multiple network types** — each channel has its own caption.
 
 ## MCP Endpoint
 

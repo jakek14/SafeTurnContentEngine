@@ -14,7 +14,7 @@ Substitute `<PAT>` with the GitHub PAT and `<VISTA_API_KEY>` with the Vista Soci
 ## Prompt
 
 ```
-You are running the Safe Turn Advisory multi-channel content engine. Generate one LinkedIn post and one Meta (Facebook + Instagram) post for today, then publish both to Vista Social as Pending Review.
+You are running the Safe Turn Advisory multi-channel content engine. Generate one LinkedIn post, one Facebook post, and one Instagram post for today, then publish all three to Vista Social as Pending Review.
 
 ================================================================
 STEP 1 — Clone or pull the repo
@@ -36,18 +36,22 @@ STEP 2 — Read the rules
 - Read CLAUDE.md (master)
 - Read voice-guide.md
 - Read linkedin/CLAUDE.md
-- Read meta/CLAUDE.md
+- Read meta/facebook/CLAUDE.md
+- Read meta/instagram/CLAUDE.md
 - Read vista-config.md (Vista Social IDs and publishing pattern)
 
 ================================================================
 STEP 3 — Determine yesterday's pillar per channel
 ================================================================
 
-- ls linkedin/drafts/ linkedin/published/ — find most recent file per channel
-- ls meta/drafts/ meta/published/ — same
-- git log --oneline -20 — read commit messages for "LinkedIn: [pillar] / Meta: [pillar]"
-- Today's LinkedIn pillar must differ from yesterday's LinkedIn pillar
-- Today's Meta pillar must differ from yesterday's Meta pillar
+For EACH of the three channels, find the most recent file in drafts/ and published/, plus check git log:
+- linkedin/drafts/, linkedin/published/
+- meta/facebook/drafts/, meta/facebook/published/
+- meta/instagram/drafts/, meta/instagram/published/
+
+git log --oneline -20 — read commit messages for "LI: [pillar] / FB: [pillar] / IG: [pillar]"
+
+Today's pillar must differ from yesterday's pillar ON THE SAME CHANNEL. Each channel rotates independently — they can be the same pillar on the same day if appropriate, just not yesterday's same-channel pillar.
 
 ================================================================
 STEP 4 — Research current SMB debt / MCA / cash flow news
@@ -60,6 +64,8 @@ Run AT LEAST 3 WebSearch queries. Look for:
 
 If WebSearch results are weak, expand to general SMB financial pressure news. DO NOT invent statistics.
 
+The same research base powers all three posts, but each post must use a different angle / hook / framing.
+
 ================================================================
 STEP 5 — Generate the LinkedIn post
 ================================================================
@@ -69,64 +75,87 @@ Pick a pillar different from yesterday's LinkedIn pillar.
 Write the post text only to linkedin/drafts/YYYY-MM-DD.md (no PILLAR tag, no metadata).
 
 ================================================================
-STEP 6 — Generate the Meta post
+STEP 6 — Generate the Facebook post
 ================================================================
 
-Follow meta/CLAUDE.md (600–1,200 chars, IG hook in line 1, 5–10 hashtags, visual direction comment at top).
-Pick a pillar different from yesterday's Meta pillar.
-The Meta post must NOT be a copy-paste of the LinkedIn post — different angle, different hook, different length.
+Follow meta/facebook/CLAUDE.md (1,000–1,800 chars, less aggressive hook than IG, 2–5 hashtags).
+Pick a pillar different from yesterday's Facebook pillar.
+NOT a copy-paste of the LinkedIn post — different hook, different angle.
 
 Format example for the visual comment line:
-<!-- VISUAL: Branded text-card on dark background with the pull quote: "[short phrase from caption]". Safe Turn brand colors. -->
+<!-- VISUAL: Branded text-card on dark background with the pull quote: "[short phrase from caption]". Safe Turn brand colors. Format: square 1:1 or horizontal 1.91:1. -->
 
-Write the visual comment + caption to meta/drafts/YYYY-MM-DD.md.
+Write visual comment + caption to meta/facebook/drafts/YYYY-MM-DD.md.
 
 ================================================================
-STEP 7 — Commit and push
+STEP 7 — Generate the Instagram post
 ================================================================
 
-git add linkedin/drafts/YYYY-MM-DD.md meta/drafts/YYYY-MM-DD.md
-git commit -m "Daily content - LinkedIn: [pillar] / Meta: [pillar] - YYYY-MM-DD
+Follow meta/instagram/CLAUDE.md (500–900 chars, line-1 hook MUST stand alone at ~125 chars, 5–10 hashtags, no links).
+Pick a pillar different from yesterday's Instagram pillar.
+NOT a copy-paste of the LinkedIn or Facebook posts — tighter, punchier, IG-native.
+
+Format example for the visual comment line:
+<!-- VISUAL: Branded square text-card (1:1) on dark background with the pull quote: "[short phrase from caption]". Safe Turn brand colors. Readable at thumbnail size. -->
+
+Write visual comment + caption to meta/instagram/drafts/YYYY-MM-DD.md.
+
+================================================================
+STEP 8 — Commit and push (single commit, all three files)
+================================================================
+
+git add linkedin/drafts/YYYY-MM-DD.md meta/facebook/drafts/YYYY-MM-DD.md meta/instagram/drafts/YYYY-MM-DD.md
+git commit -m "Daily content - LI: [pillar] / FB: [pillar] / IG: [pillar] - YYYY-MM-DD
 
 Sources:
 - [title](URL)
 - [title](URL)"
 git push origin main
 
-If no external sources informed the post, write "Sources: none (general industry knowledge)".
+If no external sources informed the posts, write "Sources: none (general industry knowledge)".
 
 ================================================================
-STEP 8 — Publish to Vista Social (MCP primary, curl fallback)
+STEP 9 — Publish to Vista Social (MCP primary, Python fallback)
 ================================================================
 
 Vista Social IDs (from vista-config.md):
 - workflow_gid: 69ca8c24d75620ecec4eb0b8 (Safeturn Content Engine approval workflow)
 - LinkedIn profile_id: 703776
-- Facebook profile_id: discover at runtime (may not exist yet)
-- Instagram profile_id: discover at runtime (may not exist yet)
+- Facebook profile_id: discover at runtime via listProfiles
+- Instagram profile_id: discover at runtime via listProfiles
 - Profile group: "Safeturn Advisory (Brand)"
 - API endpoint: https://vistasocial.com/api/integration/mcp?api_key=<VISTA_API_KEY>
 
------- 8a. Try MCP first ------
+Routing rules:
+- LinkedIn caption → LinkedIn profile only
+- Facebook caption → Facebook profile only
+- Instagram caption → Instagram profile only
+- ABSOLUTELY NEVER send the same caption to multiple network types.
 
-Attempt to use the Vista Social MCP tools (createOrUpdatePost, listProfiles, etc.) directly.
+------ 9a. Try MCP first ------
+
+Attempt the Vista Social MCP tools (createOrUpdatePost, listProfiles).
 
 If MCP tools ARE available:
 1. Call listProfiles, filter for profile group "Safeturn Advisory (Brand)"
-2. Identify profile_ids by network_code: linkedin, facebook, instagram
-3. Call createOrUpdatePost twice:
-   - LinkedIn post → linkedin profile_ids only, content = LinkedIn caption
-   - Meta post → facebook + instagram profile_ids, content = Meta caption (FB and IG share caption)
-4. Both calls must include workflow_gid: 69ca8c24d75620ecec4eb0b8 → posts land as Pending Review
-5. Do NOT publish directly. Do NOT skip the workflow.
+2. Identify profile_id by network_code: linkedin (already known: 703776), facebook, instagram (or instagram_business)
+3. Call createOrUpdatePost THREE times, each routed to a single channel:
+   - LinkedIn caption → profile_ids: [703776]
+   - Facebook caption → profile_ids: [<discovered FB id>]
+   - Instagram caption → profile_ids: [<discovered IG id>]
+4. All three calls must include workflow_gid: 69ca8c24d75620ecec4eb0b8 → posts land as Pending Review
+5. Strip the leading <!-- VISUAL: ... --> comment from FB/IG captions before posting
+6. Do NOT publish directly. Do NOT skip the workflow.
 
-If listProfiles returns no facebook or instagram profiles, that is expected during rollout. Skip the Meta publish step (the Meta draft is still committed in git for manual posting if needed) and continue.
+If listProfiles returns no facebook profile, skip the FB publish step (FB draft stays committed for manual posting).
+If listProfiles returns no instagram profile, skip the IG publish step (IG draft stays committed for manual posting).
+LinkedIn posts unconditionally (profile already live).
 
------- 8b. Curl fallback if MCP unavailable ------
+------ 9b. Python urllib fallback if MCP unavailable ------
 
 If MCP tools are NOT loaded (permitted_tools is empty, or tools/call errors), fall back to Python urllib:
 
-import urllib.request, json
+import urllib.request, json, re
 
 API_KEY = "<VISTA_API_KEY>"
 ENDPOINT = f"https://vistasocial.com/api/integration/mcp?api_key={API_KEY}"
@@ -134,6 +163,8 @@ HEADERS = {
     "Content-Type": "application/json",
     "Accept": "application/json, text/event-stream"
 }
+WORKFLOW_GID = "69ca8c24d75620ecec4eb0b8"
+LINKEDIN_PROFILE_ID = 703776
 
 def vista_call(method_name, arguments):
     payload = {
@@ -151,39 +182,51 @@ def vista_call(method_name, arguments):
     with urllib.request.urlopen(req, timeout=60) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
-# Step A: discover profile IDs
-profiles_resp = vista_call("listProfiles", {})
-# Parse profiles_resp to extract profile_ids by network_code, filtered to "Safeturn Advisory (Brand)" group
+def strip_visual(caption):
+    return re.sub(r"^\s*<!--.*?-->\s*", "", caption, flags=re.DOTALL)
 
-# Step B: post LinkedIn
+# Discover FB + IG profile IDs
+profiles_resp = vista_call("listProfiles", {})
+# Parse profiles_resp to find profile_ids by network_code, filtered to "Safeturn Advisory (Brand)" group
+fb_id = ...   # network_code == "facebook"
+ig_id = ...   # network_code in ("instagram", "instagram_business")
+
+# Post LinkedIn (always)
 linkedin_caption = open("linkedin/drafts/YYYY-MM-DD.md").read()
 li_resp = vista_call("createOrUpdatePost", {
-    "profile_ids": [703776],  # known LinkedIn profile_id
+    "profile_ids": [LINKEDIN_PROFILE_ID],
     "content": linkedin_caption,
-    "workflow_gid": "69ca8c24d75620ecec4eb0b8"
+    "workflow_gid": WORKFLOW_GID
 })
 
-# Step C: post Meta (only if FB/IG profile_ids were discovered)
-meta_caption_full = open("meta/drafts/YYYY-MM-DD.md").read()
-# Strip the leading <!-- VISUAL: ... --> comment before posting
-meta_caption = strip_visual_comment(meta_caption_full)
-if fb_id or ig_id:
-    meta_resp = vista_call("createOrUpdatePost", {
-        "profile_ids": [id for id in [fb_id, ig_id] if id],
-        "content": meta_caption,
-        "workflow_gid": "69ca8c24d75620ecec4eb0b8"
+# Post Facebook (only if FB profile exists)
+if fb_id:
+    fb_caption = strip_visual(open("meta/facebook/drafts/YYYY-MM-DD.md").read())
+    fb_resp = vista_call("createOrUpdatePost", {
+        "profile_ids": [fb_id],
+        "content": fb_caption,
+        "workflow_gid": WORKFLOW_GID
     })
 
-The curl/urllib fallback is not optional — it is the resilience layer for known MCP-on-trigger flakiness. Always include it.
+# Post Instagram (only if IG profile exists)
+if ig_id:
+    ig_caption = strip_visual(open("meta/instagram/drafts/YYYY-MM-DD.md").read())
+    ig_resp = vista_call("createOrUpdatePost", {
+        "profile_ids": [ig_id],
+        "content": ig_caption,
+        "workflow_gid": WORKFLOW_GID
+    })
+
+The Python urllib fallback is not optional — it is the resilience layer for known MCP-on-trigger flakiness. Always include it.
 
 ================================================================
-STEP 9 — Final report
+STEP 10 — Final report
 ================================================================
 
 Output a short summary:
-- LinkedIn pillar + first line of the post
-- Meta pillar + first line of the post
-- Vista Social post IDs returned (or "skipped — Meta profiles not yet connected")
+- LinkedIn pillar + first line of post + Vista post ID (or error)
+- Facebook pillar + first line of post + Vista post ID (or "skipped — FB profile not yet connected")
+- Instagram pillar + first line of post + Vista post ID (or "skipped — IG profile not yet connected")
 - Git commit SHA
 - Whether MCP or fallback was used
 
