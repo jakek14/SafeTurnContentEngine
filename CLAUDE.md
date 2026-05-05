@@ -125,6 +125,24 @@ Check the most recent file in each channel's `drafts/` and `published/` folders,
 - No exclamation marks (calm confidence, not excitement)
 - Never repeat the same content angle two days in a row on the same channel
 
+## Duplicate Detection — READ THIS CAREFULLY
+
+Two posts count as duplicates if they share the same **CORE IDEA**, even with different stats, different framing, or different wording. Examples of duplicates:
+
+- "MCAs hit you with daily pulls" and "ACH withdrawals drain your account every business day" — SAME IDEA (daily payment pressure)
+- "Banks said no, so the owner went to alternative lenders" and "27% bank approval rate forces SMBs into MCAs" — SAME IDEA (denial pipeline to MCAs)
+- "Profit on paper, empty bank account" and "Your P&L looks fine but cash is gone" — SAME IDEA (profit vs cash flow)
+- "MCA stacking is a fast track to insolvency" and "Taking a second advance to pay the first" — SAME IDEA (stacking spiral)
+
+**Before writing each post, identify the ONE SENTENCE core idea.** Then check the last 14 days of drafts/published files **across ALL THREE channels** (linkedin/, meta/facebook/, meta/instagram/). If ANY recent post shares that core idea, pick a **completely different topic** — not a different stat or angle on the same topic.
+
+This rule applies cross-channel:
+- A core idea that ran on LinkedIn 5 days ago is off-limits for Facebook today
+- A core idea that ran on Instagram yesterday is off-limits for LinkedIn today
+- The 14-day window is rolling — older posts free up
+
+The pillar rotation rule (no repeat 2 days in a row) and the duplicate detection rule are **independent**. Two posts can be on different pillars but still be duplicates if they share the same core idea. Two posts can be on the same pillar but not duplicates if they cover genuinely different ideas.
+
 ## Truthfulness & Craft Rules (Non-Negotiable)
 
 These are the rules the v1 LinkedIn engine evolved through real edits. They apply to every post on every channel.
