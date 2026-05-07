@@ -8,6 +8,14 @@ The Meta feed should look like a real graphic designer makes one custom card per
 
 If two consecutive posts on the same channel look like the same design with different headlines, the engine has failed its job. Each post needs a different *composition, visual centerpiece, color emphasis,* and *mood* than the last several posts on its channel.
 
+## Default to imagery, NOT typography
+
+**Typography-only designs are the exception, not the rule.** Modern image generators handle text reliably so typography is the safe default — but a feed of all-typography posts looks like content-engine output, not a real brand. A scrolling viewer should see actual photography, charts, documents, textures, and material on most days; pure-text design cards on a minority.
+
+**Quota: across any rolling 7 posts on a channel, no more than 2 should be typography-only.** The other 5+ should feature real imagery (photographic, data viz, material/texture, or document-driven).
+
+When you brainstorm 3 design directions per post, **at least 2 of the 3 must be imagery-led** (real photography / data viz / document / texture / material), not typography-led. Pick the one that best serves the post.
+
 ---
 
 ## Brand Identity (immutable)
@@ -40,38 +48,63 @@ If two consecutive posts on the same channel look like the same design with diff
 
 ## Variety Mandate
 
-When generating today's image prompt, the engine MUST review the **last 5 image prompts on the same channel** (read the most recent draft and published files in `meta/facebook/` or `meta/instagram/`) and ensure the new prompt differs meaningfully on at least three of these five axes:
+When generating today's image prompt, the engine MUST review the **last 5 image prompts on the same channel** (read the most recent draft and published files in `meta/facebook/` or `meta/instagram/`) and ensure the new prompt differs meaningfully on at least four of these six axes:
 
-1. **Composition** — where does the eye go first? Centered, asymmetric, full-bleed type, off-axis, framed, layered, diagonal, stacked-hierarchy, color-blocked, edge-anchored.
-2. **Visual centerpiece** — what's carrying the image? The headline typography, a stat numeral, a geometric shape, a texture, negative space, a color block, a typographic echo / repetition.
-3. **Color dominance** — which color owns the most of the frame? White-dominant, dark-blue-dominant, green-dominant, balanced split, monochrome + single accent.
-4. **Headline treatment** — how is the headline rendered? Single weight centered, two-tone (different words different colors), oversized scale, mixed sizes, all caps, tight kerning, generous tracking, on a color block, on a texture, framed by negative space.
-5. **Mood** — calm/quiet, confident/declarative, sober/serious, contemplative, scroll-stopping/loud, editorial/restrained.
+1. **Medium type — THE MOST IMPORTANT AXIS.** What KIND of image is this? Choose from: *photographic-real* (people, environments, objects, cityscapes), *document/material* (contracts, statements, ledgers, real-world textures like concrete or paper), *data visualization* (charts, graphs, stat heroes), *abstract design* (color blocks, geometric shapes, layered forms, diagonal splits), *typography-only* (the design IS the type — no other elements). Across any 7-post rolling window, typography-only must appear at most twice. The other 5+ must use a different medium.
+2. **Composition** — where does the eye go first? Centered, asymmetric, full-bleed, off-axis, framed, layered, diagonal, stacked-hierarchy, color-blocked, edge-anchored.
+3. **Visual centerpiece** — what's carrying the image? Real photograph, document, chart, texture, geometric shape, color block, typography, negative space.
+4. **Color dominance** — which color owns the most of the frame? White-dominant, dark-blue-dominant, green-dominant, balanced split, photographic natural tones (warm paper, neutral concrete, sky blue), monochrome + accent.
+5. **Headline treatment** — how is the headline rendered? Centered, left-aligned, on a photograph, on a color block, on a texture, two-tone, oversized, framed by space, integrated into a graphic.
+6. **Mood** — calm/quiet, confident/declarative, sober/serious, contemplative, scroll-stopping, editorial, documentary, atmospheric.
 
-If three of those five aren't different from any of the last 5 prompts on this channel, redesign before writing the prompt.
+If four of those six aren't different from any of the last 5 prompts on this channel, redesign before writing the prompt. Medium type difference counts heaviest — if all 5 prior posts are typography-only, today MUST be a different medium.
 
 ---
 
-## Composition Vocabulary (inspiration, not templates)
+## Composition Vocabulary (organized by medium type — bias toward imagery)
 
-These are *patterns* — the engine combines and adapts them. Mix axes freely. Don't stick rigidly to any single one.
+The engine generates at least 3 design directions per post, **at least 2 of which must be imagery-led** (drawn from the first three groups below), with at most 1 typography-only direction.
+
+### Imagery-led patterns (DEFAULT — prefer these)
+
+**Photographic-real:**
+- **Editorial photograph + lower text** — full-bleed real-feeling photo (office, building exterior, business owner from behind, hands on document, candid working moment) in the upper 60–70% of the frame; headline sits on a clean white lower band
+- **Duotone photograph** — a real photograph rendered in dark blue + white only (no other colors); headline overlaid on the darker zone
+- **Photograph with negative-space corner** — real photo fills most of the frame except one corner kept clean for typography
+- **Cityscape / architecture** — modern office buildings at dusk, financial district, anonymous facade — atmospheric backdrop with overlaid headline
+- **Still-life arrangement** — top-down editorial shot of objects (calculator, fountain pen, notebook, ledger, currency, eyeglasses, coffee mug) on a desk surface
+- **Over-the-shoulder / hands-only** — a person from behind reviewing documents, or just hands on a contract / keyboard
+
+**Document/material:**
+- **Macro of a contract page** — close-up of legal-looking type with a pen, a highlighter mark, or a partial signature line; readable generic legal language only
+- **Stack of folded papers** — overlapping cream documents at slight angles with soft natural shadows
+- **Real-world texture** — close-up of exposed concrete, brushed steel, matte stone, aged paper grain, wood grain, marble — occupies a region of the frame; headline on the clean part
+- **Light & shadow study** — directional raking light across a textured wall or surface, atmospheric, contemplative
+
+**Data visualization:**
+- **Stat hero** — a single huge number/percentage as the visual centerpiece; supporting label smaller; brand-colored
+- **Bar chart** — clean horizontal or vertical bars with real data, brand-colored, source attributed
+- **Comparison split** — two small visualizations side-by-side contrasting two states
+- **Line graph / trend** — minimal trend visualization with one or two lines
+
+### Abstract design patterns (use sometimes — not the default)
+
+- **Asymmetric color-block split** — frame divided into solid color regions, headline anchored in one
+- **Diagonal split** — clean diagonal line divides white and a brand color
+- **Layered geometry** — overlapping rectangles or squares in brand colors create depth
+- **Vertical/horizontal band layout** — a single solid color band of varying width holds part of the composition
+- **Color-blocked footer** — bottom 1/3 is a solid dark blue or green block; headline sits on white above
+- **Monogram anchor** — a single oversized geometric form (circle, square, triangle) acts as visual anchor
+
+### Typography-only patterns (use SPARINGLY — at most 2 of every 7 posts per channel)
 
 - **Editorial pull-quote** — centered headline on a clean field with one tiny accent
-- **Asymmetric color-block split** — frame divided into two solid color regions, headline anchored in one
-- **Stat hero** — a single large number or percentage carries the image; supporting text smaller
-- **Typographic poster** — oversized headline that fills the frame, may bleed to the edges
-- **Two-tone headline** — different words/phrases of the headline rendered in different brand colors for emphasis
-- **Echoed type** — the same word/phrase appears at two different sizes or weights, creating visual rhythm
-- **Vertical/horizontal band layout** — a single solid color band of varying width holds part of the composition
-- **Framed document** — a thin border, like a financial memo or letterhead, surrounds the headline
-- **Texture-anchored** — a real-world texture (concrete, stone, paper grain, brushed metal, raw linen) occupies a region of the frame; headline sits on the clean part
-- **Layered geometry** — overlapping rectangles or squares in the brand colors create depth; headline sits within or alongside
-- **Negative-space hero** — the headline is small, deliberately surrounded by empty space; the emptiness is the design
-- **Color-blocked footer** — the bottom 1/3 is a solid dark blue or green block holding the subtitle and badge; headline sits on the white above
-- **Diagonal split** — a clean diagonal line divides white and a brand color; headline straddles or is in one half
-- **Monogram anchor** — a single oversized geometric form (circle, square, triangle, vertical bar) in green or dark blue acts as the visual anchor; headline alongside
+- **Typographic poster** — oversized headline that fills the frame, may bleed
+- **Two-tone headline** — words of the headline rendered in different brand colors for emphasis
+- **Echoed type** — the same word/phrase appears at two different sizes or weights
+- **Negative-space hero** — small headline surrounded by deliberate empty space
 
-The engine should generate at least 3 different composition ideas per post and pick the strongest, biased toward whatever has *not* been used recently on that channel.
+When the engine brainstorms 3 directions, the brainstorm distribution should be roughly: 1–2 photographic, 1 data viz or document/material, 0–1 typography. Pick the strongest one. If the audit of the last 5 posts shows multiple typography-only entries, the next post **must** be imagery-led — non-negotiable.
 
 ---
 
